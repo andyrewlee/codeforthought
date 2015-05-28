@@ -8,16 +8,13 @@ body {
 
 #html_editor, #css_editor, #js_editor {
   width: 100%;
-  height: 250px;
   display: inline-block;
 }
-
 
 #browser, #terminal {
   border-radius: 10px;
   margin-bottom: 10px;
   display: inline-block;
-  height: 360px;
   vertical-align: top;
   width: 100%;
   padding: 20px;
@@ -26,6 +23,7 @@ body {
 #browser {
   background-color: white;
   color: black;
+  height: 360px;
 }
 
 #terminal {
