@@ -1,3 +1,11 @@
+window.addEventListener("keydown", function(e) {
+    // arrow keys
+    if([37, 38, 39, 40].indexOf(e.keyCode) > -1) {
+        e.preventDefault();
+    }
+}, false);
+
+
 var main = document.getElementById('main_editor');
 var editor_one = document.getElementById('editor_one');
 var editor_two = document.getElementById('editor_two');
