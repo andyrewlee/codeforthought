@@ -18,7 +18,7 @@ if(localStorage.getItem('main_editor')) {
   } else if(localStorage.getItem('main_editor') == "css_editor") {
     main.innerHTML = '<h5>CSS<\/h5><div id="css_editor"><\/div>';
   } else if(localStorage.getItem('main_editor') == "js_editor") {
-    main.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScript()">Evaluate<\/button>';
+    main.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScriptButtonPressed()">Evaluate<\/button>';
   } else if(localStorage.getItem('main_editor') == "terminal") {
     main.innerHTML = '<h5>Terminal<\/h5><div id="terminal"><\/div>';
   } else {
@@ -39,7 +39,7 @@ if(localStorage.getItem('editor_one')) {
   } else if(localStorage.getItem('editor_one') == "css_editor") {
     editor_one.innerHTML = '<h5>CSS<\/h5><div id="css_editor"><\/div>';
   } else if(localStorage.getItem('editor_one') == "js_editor") {
-    editor_one.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScript()">Evaluate<\/button>';
+    editor_one.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScriptButtonPressed()">Evaluate<\/button>';
   } else if(localStorage.getItem('editor_one') == "terminal") {
     editor_one.innerHTML = '<h5>Terminal<\/h5><div id="terminal"><\/div>';
   } else {
@@ -59,7 +59,7 @@ if(localStorage.getItem('editor_two')) {
   } else if(localStorage.getItem('editor_two') == "css_editor") {
     editor_two.innerHTML = '<h5>CSS<\/h5><div id="css_editor"><\/div>';
   } else if(localStorage.getItem('editor_two') == "js_editor") {
-    editor_two.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScript()">Evaluate<\/button>';
+    editor_two.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScriptButtonPressed()">Evaluate<\/button>';
   } else if(localStorage.getItem('editor_two') == "terminal") {
     editor_two.innerHTML = '<h5>Terminal<\/h5><div id="terminal"><\/div>';
   } else {
@@ -80,15 +80,15 @@ if(localStorage.getItem('editor_three')) {
   } else if(localStorage.getItem('editor_three') == "css_editor") {
     editor_three.innerHTML = '<h5>CSS<\/h5><div id="css_editor"><\/div>';
   } else if(localStorage.getItem('editor_three') == "js_editor") {
-    editor_three.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScript()">Evaluate<\/button>';
+    editor_three.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScriptButtonPressed()">Evaluate<\/button>';
   } else if(localStorage.getItem('editor_three') == "terminal") {
     editor_three.innerHTML = '<h5>Terminal<\/h5><div id="terminal"><\/div>';
   } else {
-    editor_three.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScript()">Evaluate<\/button>';
+    editor_three.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScriptButtonPressed()">Evaluate<\/button>';
   }
 } else {
 
-  editor_three.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScript()">Evaluate<\/button>';
+  editor_three.innerHTML = '<h5>JavaScript<\/h5><div id="js_editor"><\/div><button class="pull-right btn-sm btn-primary" onclick="runScriptButtonPressed()">Evaluate<\/button>';
   localStorage.setItem('editor_three', 'js');
 
 }
@@ -171,6 +171,11 @@ js_editor.on('change', function() {
   localStorage.setItem("js", js_value);
   console.dir(localStorage.getItem("js"));
 })
+
+function runScriptButtonPressed() {
+  location.reload();
+  runScript();
+}
 
 function runScript() {
   document.onkeydown = null
