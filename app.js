@@ -122,7 +122,7 @@ console.log = function() {
     }
     new_log += "<\/p>";
     var terminal = document.getElementById('terminal');
-    terminal.innerHTML += new_log;
+    terminal.innerHTML = new_log + terminal.innerHTML;
   }
   oldf.apply(console, arguments);
 }
