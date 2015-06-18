@@ -41,3 +41,7 @@ body {
 #terminal p.error {
   color: red;
 }
+
+img {
+  z-index: 99;
+}
