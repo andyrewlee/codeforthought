@@ -131,6 +131,7 @@ var html_editor = ace.edit("html_editor");
 html_editor.setTheme("ace/theme/monokai");
 html_editor.getSession().setMode("ace/mode/html");
 html_editor.getSession().setValue(localStorage.getItem("html"));
+html_editor.getSession().setUseWrapMode(true);
 
 var html = document.getElementById('html');
 var html_value = html_editor.getSession().getValue();
@@ -140,6 +141,7 @@ var css_editor  = ace.edit("css_editor");
 css_editor.setTheme("ace/theme/github");
 css_editor.getSession().setMode("ace/mode/css");
 css_editor.getSession().setValue(localStorage.getItem("css"));
+css_editor.getSession().setUseWrapMode(true);
 
 var css = document.getElementById('css');
 var css_value = css_editor.getSession().getValue();
@@ -149,7 +151,7 @@ var js_editor = ace.edit("js_editor");
 js_editor.setTheme("ace/theme/solarized_light");
 js_editor.getSession().setMode("ace/mode/javascript");
 js_editor.getSession().setValue(localStorage.getItem("js"));
-
+js_editor.getSession().setUseWrapMode(true);
 runScript();
 
 html_editor.on('change', function() {
