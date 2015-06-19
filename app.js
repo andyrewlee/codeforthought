@@ -191,19 +191,12 @@ function runScript() {
 }
 
 function constructPage() {
-  var html_str = "<!DOCTYPE html>\n<html>";
-  html_str += "<head>";
-  html_str += "<meta charset='utf-8'>";
-  html_str += "<style>";
+  var html_str = "<style scoped>";
   html_str += css_editor.getSession().getValue();
   html_str += "<\/style>";
-  html_str += "<\/head>";
-  html_str += "<body>";
   html_str += html_editor.getSession().getValue();
   html_str += "<script>";
   html_str += js_editor.getSession().getValue();
   html_str += "<\/script>";
-  html_str += "<\/body>";
-  html_str += "<\/html>";
   console.dir(html_str);
 }
